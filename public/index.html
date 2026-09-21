@@ -13,7 +13,33 @@
       margin: 0;
       padding: 0;
     }
+/* TEAM */
 
+.team-section {
+  background: #080808;
+  border-top: 1px solid #1c1c1c;
+}
+
+.team-image {
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #292929;
+  background: #111;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.team-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 700px) {
+  .team-image {
+    border-radius: 12px;
+  }
+}
     html {
       scroll-behavior: smooth;
     }
@@ -325,7 +351,31 @@
       font-weight: bold;
       margin-right: 10px;
     }
+<!-- TEAM -->
 
+<section class="team-section" id="team">
+  <div class="container">
+
+    <div class="badge">Наша команда</div>
+
+    <h2 class="section-title">
+      ПРОФЕССИОНАЛЬНЫЕ <span>ТРЕНЕРЫ.</span>
+    </h2>
+
+    <p class="section-subtitle">
+      Давид и Михаил — тренеры Steel Form.
+      Одна команда, одна цель — твой результат.
+    </p>
+
+    <div class="team-image">
+      <img
+        src="/team.png"
+        alt="Тренеры Steel Form — Давид и Михаил"
+      >
+    </div>
+
+  </div>
+</section>
     /* PROGRAMS */
 
     .programs {
