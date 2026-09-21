@@ -5,11 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Steel Form — персональный тренер Михаил</title>
-
-  <meta
-    name="description"
-    content="Steel Form — персональные тренировки с тренером Михаилом. Сила, форма и результат."
-  >
+  <meta name="description" content="Steel Form — персональные тренировки с тренером Михаилом. Сила, форма и результат.">
 
   <style>
     * {
@@ -23,9 +19,9 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       background: #080808;
-      color: #fff;
+      color: #ffffff;
       line-height: 1.5;
     }
 
@@ -51,10 +47,10 @@
       position: fixed;
       top: 0;
       left: 0;
-      right: 0;
+      width: 100%;
       z-index: 100;
-      background: rgba(8, 8, 8, 0.88);
-      backdrop-filter: blur(15px);
+      background: rgba(8, 8, 8, 0.92);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid #222;
     }
 
@@ -63,16 +59,17 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 30px;
     }
 
     .logo {
-      font-size: 24px;
+      font-size: 25px;
       font-weight: 900;
-      letter-spacing: -1px;
+      letter-spacing: 2px;
     }
 
     .logo span {
-      color: #f3c623;
+      color: #f5c400;
     }
 
     nav {
@@ -82,262 +79,339 @@
     }
 
     nav a {
-      color: #aaa;
-      font-size: 14px;
+      color: #ccc;
+      font-size: 15px;
       transition: 0.2s;
     }
 
     nav a:hover {
-      color: #fff;
+      color: #f5c400;
     }
 
-    .header-button {
-      background: #f3c623;
-      color: #000;
-      padding: 11px 18px;
-      border-radius: 10px;
+    .header-btn {
+      background: #f5c400;
+      color: #080808;
+      padding: 12px 20px;
+      border-radius: 8px;
       font-weight: 800;
-      border: 0;
-      cursor: pointer;
     }
 
     /* HERO */
 
     .hero {
       min-height: 100vh;
-      padding-top: 150px;
       display: flex;
       align-items: center;
+      padding: 120px 0 70px;
       position: relative;
       overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      background: #f3c623;
-      opacity: 0.08;
-      filter: blur(120px);
-      border-radius: 50%;
-      right: -150px;
-      top: 100px;
+      background:
+        radial-gradient(circle at 80% 30%, rgba(245, 196, 0, 0.12), transparent 30%),
+        radial-gradient(circle at 20% 80%, rgba(245, 196, 0, 0.05), transparent 30%),
+        #080808;
     }
 
     .hero-content {
-      max-width: 780px;
-      position: relative;
-      z-index: 1;
+      max-width: 760px;
     }
 
     .badge {
       display: inline-block;
-      border: 1px solid #333;
-      background: #111;
+      border: 1px solid #444;
+      color: #f5c400;
       padding: 8px 14px;
       border-radius: 100px;
-      color: #f3c623;
       font-size: 13px;
       font-weight: 700;
-      margin-bottom: 22px;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     h1 {
-      font-size: clamp(52px, 9vw, 100px);
-      line-height: 0.92;
-      letter-spacing: -5px;
-      font-weight: 950;
+      font-size: clamp(48px, 9vw, 92px);
+      line-height: 0.95;
+      letter-spacing: -4px;
       margin-bottom: 28px;
+      font-weight: 900;
     }
 
     h1 span {
-      color: #f3c623;
+      color: #f5c400;
     }
 
     .hero-text {
-      max-width: 600px;
+      max-width: 650px;
       color: #aaa;
-      font-size: 19px;
+      font-size: 20px;
       margin-bottom: 35px;
     }
 
     .hero-buttons {
       display: flex;
-      gap: 12px;
       flex-wrap: wrap;
+      gap: 14px;
     }
 
-    .primary-button {
-      border: 0;
-      background: #f3c623;
-      color: #000;
-      padding: 16px 25px;
-      border-radius: 12px;
-      font-weight: 900;
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 52px;
+      padding: 0 25px;
+      border-radius: 8px;
+      font-weight: 800;
+      border: none;
       cursor: pointer;
       transition: 0.2s;
     }
 
-    .primary-button:hover {
+    .btn-yellow {
+      background: #f5c400;
+      color: #080808;
+    }
+
+    .btn-yellow:hover {
+      background: #ffd51a;
       transform: translateY(-2px);
     }
 
-    .secondary-button {
-      border: 1px solid #333;
+    .btn-dark {
+      border: 1px solid #444;
       background: #111;
       color: #fff;
-      padding: 16px 25px;
-      border-radius: 12px;
-      font-weight: 800;
-      cursor: pointer;
+    }
+
+    .btn-dark:hover {
+      border-color: #f5c400;
     }
 
     /* SECTIONS */
 
     section {
       padding: 100px 0;
-      border-top: 1px solid #181818;
     }
 
     .section-title {
       font-size: clamp(35px, 6vw, 58px);
       line-height: 1;
-      letter-spacing: -2px;
       margin-bottom: 15px;
+      font-weight: 900;
+    }
+
+    .section-title span {
+      color: #f5c400;
     }
 
     .section-subtitle {
       color: #888;
-      max-width: 600px;
+      max-width: 650px;
       margin-bottom: 45px;
     }
 
-    /* CARDS */
+    /* FEATURES */
 
-    .cards {
+    .features {
+      background: #0d0d0d;
+      border-top: 1px solid #1c1c1c;
+      border-bottom: 1px solid #1c1c1c;
+    }
+
+    .feature-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      gap: 20px;
     }
 
-    .card {
+    .feature {
       background: #111;
-      border: 1px solid #252525;
-      border-radius: 20px;
+      border: 1px solid #222;
+      border-radius: 14px;
       padding: 30px;
-      transition: 0.25s;
     }
 
-    .card:hover {
-      border-color: #444;
-      transform: translateY(-4px);
-    }
-
-    .card-number {
-      color: #f3c623;
+    .feature-number {
+      color: #f5c400;
       font-size: 14px;
       font-weight: 900;
-      margin-bottom: 45px;
+      margin-bottom: 15px;
     }
 
-    .card h3 {
-      font-size: 24px;
+    .feature h3 {
+      font-size: 22px;
       margin-bottom: 10px;
     }
 
-    .card p {
+    .feature p {
       color: #888;
-      font-size: 15px;
     }
 
-    /* TRAINER */
+    /* ABOUT */
 
-    .trainer {
+    .about-grid {
       display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 50px;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
       align-items: center;
     }
 
-    .trainer-photo {
-      min-height: 500px;
-      border-radius: 25px;
-      background:
-        radial-gradient(circle at 50% 25%, #555, transparent 20%),
-        linear-gradient(145deg, #202020, #080808);
+    .about-text p {
+      color: #aaa;
+      margin-bottom: 18px;
+      font-size: 17px;
+    }
+
+    .quote {
+      border-left: 4px solid #f5c400;
+      padding: 20px 0 20px 25px;
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 25px;
+    }
+
+    .trainer-card {
+      background: linear-gradient(145deg, #151515, #0d0d0d);
       border: 1px solid #292929;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
+      border-radius: 20px;
+      padding: 45px;
+      position: relative;
       overflow: hidden;
     }
 
-    .trainer-photo span {
-      font-size: 100px;
-      font-weight: 950;
-      color: #f3c623;
-      opacity: 0.85;
-      margin-bottom: 20px;
+    .trainer-card::after {
+      content: "SF";
+      position: absolute;
+      right: -20px;
+      bottom: -50px;
+      font-size: 180px;
+      font-weight: 900;
+      color: rgba(245, 196, 0, 0.06);
     }
 
-    .trainer h2 {
-      font-size: clamp(40px, 6vw, 65px);
-      line-height: 1;
-      margin-bottom: 20px;
+    .trainer-label {
+      color: #f5c400;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 800;
     }
 
-    .trainer p {
+    .trainer-name {
+      font-size: 48px;
+      font-weight: 900;
+      margin: 10px 0;
+    }
+
+    .trainer-role {
       color: #999;
       margin-bottom: 25px;
-      max-width: 600px;
     }
 
-    .facts {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+    .trainer-list {
+      list-style: none;
+      position: relative;
+      z-index: 2;
     }
 
-    .fact {
-      background: #111;
-      border: 1px solid #242424;
-      border-radius: 14px;
-      padding: 18px;
+    .trainer-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid #252525;
+      color: #ccc;
     }
 
-    .fact strong {
-      display: block;
-      color: #f3c623;
-      font-size: 25px;
+    .trainer-list li::before {
+      content: "✓";
+      color: #f5c400;
+      font-weight: bold;
+      margin-right: 10px;
     }
 
-    .fact small {
-      color: #777;
-    }
+    /* PROGRAMS */
 
-    /* FORM */
-
-    .form-section {
+    .programs {
       background: #0d0d0d;
     }
 
-    .form-box {
-      max-width: 650px;
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .program {
+      border: 1px solid #282828;
+      background: #111;
+      border-radius: 16px;
+      padding: 32px;
+      transition: 0.2s;
+    }
+
+    .program:hover {
+      transform: translateY(-5px);
+      border-color: #f5c400;
+    }
+
+    .program h3 {
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .program p {
+      color: #888;
+      margin-bottom: 25px;
+    }
+
+    .program-price {
+      font-size: 30px;
+      font-weight: 900;
+      color: #f5c400;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background:
+        radial-gradient(circle at 50% 0%, rgba(245, 196, 0, 0.09), transparent 35%),
+        #080808;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .contact-info p {
+      color: #999;
+      margin-bottom: 25px;
+      font-size: 17px;
+    }
+
+    .contact-item {
+      margin-bottom: 18px;
+    }
+
+    .contact-item small {
+      display: block;
+      color: #666;
+      margin-bottom: 3px;
+    }
+
+    .contact-item strong {
+      font-size: 18px;
+    }
+
+    .form {
       background: #111;
       border: 1px solid #292929;
-      border-radius: 24px;
-      padding: 35px;
+      border-radius: 16px;
+      padding: 32px;
     }
 
-    .form-box h2 {
-      font-size: 38px;
-      margin-bottom: 10px;
-    }
-
-    .form-box > p {
-      color: #888;
-      margin-bottom: 28px;
+    .form h3 {
+      font-size: 26px;
+      margin-bottom: 25px;
     }
 
     .field {
@@ -346,52 +420,271 @@
 
     .field label {
       display: block;
-      font-size: 13px;
-      color: #999;
+      color: #aaa;
+      font-size: 14px;
       margin-bottom: 7px;
     }
 
     .field input,
     .field select {
       width: 100%;
-      padding: 15px;
+      height: 52px;
       background: #080808;
       color: #fff;
       border: 1px solid #333;
-      border-radius: 10px;
+      border-radius: 8px;
+      padding: 0 15px;
       outline: none;
     }
 
     .field input:focus,
     .field select:focus {
-      border-color: #f3c623;
+      border-color: #f5c400;
     }
 
-    .form-submit {
+    .form .btn {
       width: 100%;
       margin-top: 8px;
-      padding: 16px;
-      border: 0;
-      border-radius: 11px;
-      background: #f3c623;
-      color: #000;
-      font-weight: 900;
-      cursor: pointer;
     }
 
-    .status {
+    .form-message {
       display: none;
-      margin-top: 18px;
-      padding: 14px;
-      border-radius: 10px;
-      background: #162116;
-      color: #8ee28e;
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 8px;
+      background: #151515;
+      color: #aaa;
+      text-align: center;
     }
 
     /* FOOTER */
 
     footer {
-      padding: 45px 0;
+      padding: 35px 0;
       border-top: 1px solid #222;
       color: #666;
-      font-size: 14px
+      font-size: 14px;
+      background: #080808;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+      nav {
+        display: none;
+      }
+
+      .header-btn {
+        padding: 10px 14px;
+        font-size: 13px;
+      }
+
+      .feature-grid,
+      .program-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid,
+      .contact-grid {
+        gap: 30px;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-text {
+        font-size: 17px;
+      }
+
+      .trainer-card {
+        padding: 30px;
+      }
+
+      .trainer-name {
+        font-size: 40px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .header-inner {
+        height: 65px;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
+      .hero {
+        padding-top: 105px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .form {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a href="#" class="logo">STEEL <span>FORM</span></a>
+
+      <nav>
+        <a href="#about">О нас</a>
+        <a href="#trainer">Тренер</a>
+        <a href="#programs">Программы</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+
+      <a href="#contact" class="header-btn">Записаться</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+
+          <div class="badge">Персональные тренировки</div>
+
+          <h1>
+            СТАЛЬНАЯ<br>
+            <span>ФОРМА.</span>
+          </h1>
+
+          <p class="hero-text">
+            Steel Form — персональные тренировки с тренером Михаилом.
+            Работаем над силой, формой и дисциплиной.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-yellow">
+              Записаться на тренировку
+            </a>
+
+            <a href="#programs" class="btn btn-dark">
+              Смотреть программы
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+
+    <section class="features">
+      <div class="container">
+
+        <div class="feature-grid">
+
+          <div class="feature">
+            <div class="feature-number">01</div>
+            <h3>Индивидуальный подход</h3>
+            <p>
+              Программа тренировок под твои цели,
+              уровень подготовки и возможности.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-number">02</div>
+            <h3>Контроль техники</h3>
+            <p>
+              Правильная техника помогает эффективнее
+              выполнять упражнения и прогрессировать.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-number">03</div>
+            <h3>Работа на результат</h3>
+            <p>
+              Последовательные тренировки, контроль
+              прогресса и понятная система занятий.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+
+    <section id="about">
+      <div class="container">
+
+        <div class="about-grid">
+
+          <div class="about-text">
+
+            <div class="badge">Steel Form</div>
+
+            <h2 class="section-title">
+              ТВОЯ ФОРМА —<br>
+              <span>ТВОЯ РАБОТА.</span>
+            </h2>
+
+            <p>
+              Steel Form создан для тех, кто хочет
+              системно заниматься спортом и видеть результат.
+            </p>
+
+            <p>
+              Мы не обещаем быстрых чудес. Вместо этого —
+              тренировки, дисциплина и постепенный прогресс.
+            </p>
+
+            <div class="quote">
+              Сильнее сегодня,<br>
+              чем вчера.
+            </div>
+
+          </div>
+
+          <div class="trainer-card" id="trainer">
+
+            <div class="trainer-label">Твой тренер</div>
+
+            <div class="trainer-name">Михаил</div>
+
+            <div class="trainer-role">
+              Персональный тренер
+            </div>
+
+            <ul
