@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Steel Form — персональный тренер Михаил</title>
-  <meta name="description" content="Steel Form — персональные тренировки с тренером Михаилом. Сила, форма и результат.">
+  <title>Steel Form — персональные тренировки</title>
+  <meta name="description" content="Steel Form — персональные тренировки с тренерами Давидом и Михаилом.">
 
   <style>
     * {
@@ -13,33 +13,7 @@
       margin: 0;
       padding: 0;
     }
-/* TEAM */
 
-.team-section {
-  background: #080808;
-  border-top: 1px solid #1c1c1c;
-}
-
-.team-image {
-  width: 100%;
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid #292929;
-  background: #111;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-}
-
-.team-image img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-@media (max-width: 700px) {
-  .team-image {
-    border-radius: 12px;
-  }
-}
     html {
       scroll-behavior: smooth;
     }
@@ -47,7 +21,7 @@
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: #080808;
-      color: #ffffff;
+      color: #fff;
       line-height: 1.5;
     }
 
@@ -74,18 +48,18 @@
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 100;
-      background: rgba(8, 8, 8, 0.92);
+      z-index: 1000;
+      background: rgba(8, 8, 8, 0.94);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid #222;
     }
 
     .header-inner {
-      height: 76px;
+      height: 74px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 30px;
+      gap: 20px;
     }
 
     .logo {
@@ -100,14 +74,14 @@
 
     nav {
       display: flex;
-      gap: 28px;
       align-items: center;
+      gap: 24px;
     }
 
     nav a {
       color: #ccc;
       font-size: 15px;
-      transition: 0.2s;
+      transition: .2s;
     }
 
     nav a:hover {
@@ -117,7 +91,7 @@
     .header-btn {
       background: #f5c400;
       color: #080808;
-      padding: 12px 20px;
+      padding: 11px 18px;
       border-radius: 8px;
       font-weight: 800;
     }
@@ -128,17 +102,15 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      padding: 120px 0 70px;
-      position: relative;
-      overflow: hidden;
+      padding: 130px 0 80px;
       background:
-        radial-gradient(circle at 80% 30%, rgba(245, 196, 0, 0.12), transparent 30%),
-        radial-gradient(circle at 20% 80%, rgba(245, 196, 0, 0.05), transparent 30%),
+        radial-gradient(circle at 80% 30%, rgba(245,196,0,.14), transparent 30%),
+        radial-gradient(circle at 20% 80%, rgba(245,196,0,.06), transparent 30%),
         #080808;
     }
 
     .hero-content {
-      max-width: 760px;
+      max-width: 800px;
     }
 
     .badge {
@@ -149,20 +121,21 @@
       border-radius: 100px;
       font-size: 13px;
       font-weight: 700;
-      margin-bottom: 25px;
+      margin-bottom: 24px;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
 
     h1 {
-      font-size: clamp(48px, 9vw, 92px);
-      line-height: 0.95;
+      font-size: clamp(52px, 9vw, 94px);
+      line-height: .94;
       letter-spacing: -4px;
       margin-bottom: 28px;
       font-weight: 900;
     }
 
-    h1 span {
+    h1 span,
+    .section-title span {
       color: #f5c400;
     }
 
@@ -189,7 +162,7 @@
       font-weight: 800;
       border: none;
       cursor: pointer;
-      transition: 0.2s;
+      transition: .2s;
     }
 
     .btn-yellow {
@@ -221,18 +194,15 @@
     .section-title {
       font-size: clamp(35px, 6vw, 58px);
       line-height: 1;
-      margin-bottom: 15px;
+      margin-bottom: 18px;
       font-weight: 900;
-    }
-
-    .section-title span {
-      color: #f5c400;
     }
 
     .section-subtitle {
       color: #888;
-      max-width: 650px;
+      max-width: 700px;
       margin-bottom: 45px;
+      font-size: 17px;
     }
 
     /* FEATURES */
@@ -295,91 +265,67 @@
       margin-top: 25px;
     }
 
-    .trainer-card {
-      background: linear-gradient(145deg, #151515, #0d0d0d);
-      border: 1px solid #292929;
+    /* TEAM */
+
+    .team-section {
+      background: #0d0d0d;
+      border-top: 1px solid #1c1c1c;
+      border-bottom: 1px solid #1c1c1c;
+    }
+
+    .team-image {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
       border-radius: 20px;
-      padding: 45px;
-      position: relative;
       overflow: hidden;
+      border: 1px solid #292929;
+      background: #111;
+      box-shadow: 0 20px 60px rgba(0,0,0,.45);
     }
 
-    .trainer-card::after {
-      content: "SF";
-      position: absolute;
-      right: -20px;
-      bottom: -50px;
-      font-size: 180px;
-      font-weight: 900;
-      color: rgba(245, 196, 0, 0.06);
+    .team-image img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
 
-    .trainer-label {
+    .trainers {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .trainer-box {
+      background: #111;
+      border: 1px solid #292929;
+      border-radius: 15px;
+      padding: 25px;
+    }
+
+    .trainer-box .label {
       color: #f5c400;
       font-size: 13px;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       font-weight: 800;
     }
 
-    .trainer-name {
-      font-size: 48px;
-      font-weight: 900;
-      margin: 10px 0;
+    .trainer-box h3 {
+      font-size: 32px;
+      margin-top: 5px;
     }
 
-    .trainer-role {
-      color: #999;
-      margin-bottom: 25px;
+    .trainer-box p {
+      color: #888;
+      margin-top: 5px;
     }
 
-    .trainer-list {
-      list-style: none;
-      position: relative;
-      z-index: 2;
-    }
-
-    .trainer-list li {
-      padding: 10px 0;
-      border-bottom: 1px solid #252525;
-      color: #ccc;
-    }
-
-    .trainer-list li::before {
-      content: "✓";
-      color: #f5c400;
-      font-weight: bold;
-      margin-right: 10px;
-    }
-<!-- TEAM -->
-
-<section class="team-section" id="team">
-  <div class="container">
-
-    <div class="badge">Наша команда</div>
-
-    <h2 class="section-title">
-      ПРОФЕССИОНАЛЬНЫЕ <span>ТРЕНЕРЫ.</span>
-    </h2>
-
-    <p class="section-subtitle">
-      Давид и Михаил — тренеры Steel Form.
-      Одна команда, одна цель — твой результат.
-    </p>
-
-    <div class="team-image">
-      <img
-        src="/team.png"
-        alt="Тренеры Steel Form — Давид и Михаил"
-      >
-    </div>
-
-  </div>
-</section>
     /* PROGRAMS */
 
     .programs {
-      background: #0d0d0d;
+      background: #080808;
     }
 
     .program-grid {
@@ -393,7 +339,7 @@
       background: #111;
       border-radius: 16px;
       padding: 32px;
-      transition: 0.2s;
+      transition: .2s;
     }
 
     .program:hover {
@@ -421,13 +367,13 @@
 
     .contact {
       background:
-        radial-gradient(circle at 50% 0%, rgba(245, 196, 0, 0.09), transparent 35%),
+        radial-gradient(circle at 50% 0%, rgba(245,196,0,.09), transparent 35%),
         #080808;
     }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
+      grid-template-columns: .9fr 1.1fr;
       gap: 50px;
       align-items: start;
     }
@@ -526,6 +472,7 @@
     /* MOBILE */
 
     @media (max-width: 800px) {
+
       nav {
         display: none;
       }
@@ -538,7 +485,8 @@
       .feature-grid,
       .program-grid,
       .about-grid,
-      .contact-grid {
+      .contact-grid,
+      .trainers {
         grid-template-columns: 1fr;
       }
 
@@ -559,22 +507,15 @@
         font-size: 17px;
       }
 
-      .trainer-card {
-        padding: 30px;
-      }
-
-      .trainer-name {
-        font-size: 40px;
-      }
-
       .footer-inner {
         flex-direction: column;
       }
     }
 
     @media (max-width: 500px) {
+
       .container {
-        width: min(100% - 28px, 1120px);
+        width: calc(100% - 28px);
       }
 
       .header-inner {
@@ -600,141 +541,623 @@
       .form {
         padding: 22px;
       }
+
+      .team-image {
+        border-radius: 12px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <div class="container header-inner">
-      <a href="#" class="logo">STEEL <span>FORM</span></a>
+<header>
+  <div class="container header-inner">
 
-      <nav>
-        <a href="#about">О нас</a>
-        <a href="#trainer">Тренер</a>
-        <a href="#programs">Программы</a>
-        <a href="#contact">Контакты</a>
-      </nav>
+    <a href="#" class="logo">
+      STEEL <span>FORM</span>
+    </a>
 
-      <a href="#contact" class="header-btn">Записаться</a>
+    <nav>
+      <a href="#about">О нас</a>
+      <a href="#team">Команда</a>
+      <a href="#programs">Программы</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+
+    <a href="#contact" class="header-btn">
+      Записаться
+    </a>
+
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <div class="badge">
+          Персональные тренировки
+        </div>
+
+        <h1>
+          СТАЛЬНАЯ<br>
+          <span>ФОРМА.</span>
+        </h1>
+
+        <p class="hero-text">
+          Steel Form — персональные тренировки
+          с тренерами Давидом и Михаилом.
+          Работаем над силой, формой и дисциплиной.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#contact" class="btn btn-yellow">
+            Записаться на тренировку
+          </a>
+
+          <a href="#programs" class="btn btn-dark">
+            Смотреть программы
+          </a>
+
+        </div>
+
+      </div>
+
     </div>
-  </header>
 
-  <main>
+  </section>
 
-    <!-- HERO -->
 
-    <section class="hero">
-      <div class="container">
-        <div class="hero-content">
+  <!-- FEATURES -->
 
-          <div class="badge">Персональные тренировки</div>
+  <section class="features">
 
-          <h1>
-            СТАЛЬНАЯ<br>
-            <span>ФОРМА.</span>
-          </h1>
+    <div class="container">
 
-          <p class="hero-text">
-            Steel Form — персональные тренировки с тренером Михаилом.
-            Работаем над силой, формой и дисциплиной.
+      <div class="feature-grid">
+
+        <div class="feature">
+          <div class="feature-number">01</div>
+
+          <h3>
+            Индивидуальный подход
+          </h3>
+
+          <p>
+            Программа тренировок под твои цели,
+            уровень подготовки и возможности.
+          </p>
+        </div>
+
+
+        <div class="feature">
+          <div class="feature-number">02</div>
+
+          <h3>
+            Контроль техники
+          </h3>
+
+          <p>
+            Работаем над правильным выполнением
+            упражнений и прогрессом.
+          </p>
+        </div>
+
+
+        <div class="feature">
+          <div class="feature-number">03</div>
+
+          <h3>
+            Работа на результат
+          </h3>
+
+          <p>
+            Системные тренировки, дисциплина
+            и постоянное развитие.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="container">
+
+      <div class="about-grid">
+
+        <div class="about-text">
+
+          <div class="badge">
+            Steel Form
+          </div>
+
+          <h2 class="section-title">
+            ТВОЯ ФОРМА —<br>
+            <span>ТВОЯ РАБОТА.</span>
+          </h2>
+
+          <p>
+            Steel Form создан для тех,
+            кто хочет системно заниматься спортом
+            и видеть результат.
           </p>
 
-          <div class="hero-buttons">
-            <a href="#contact" class="btn btn-yellow">
-              Записаться на тренировку
-            </a>
+          <p>
+            Тренировки строятся на дисциплине,
+            правильной технике и постепенном прогрессе.
+          </p>
 
-            <a href="#programs" class="btn btn-dark">
-              Смотреть программы
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURES -->
-
-    <section class="features">
-      <div class="container">
-
-        <div class="feature-grid">
-
-          <div class="feature">
-            <div class="feature-number">01</div>
-            <h3>Индивидуальный подход</h3>
-            <p>
-              Программа тренировок под твои цели,
-              уровень подготовки и возможности.
-            </p>
-          </div>
-
-          <div class="feature">
-            <div class="feature-number">02</div>
-            <h3>Контроль техники</h3>
-            <p>
-              Правильная техника помогает эффективнее
-              выполнять упражнения и прогрессировать.
-            </p>
-          </div>
-
-          <div class="feature">
-            <div class="feature-number">03</div>
-            <h3>Работа на результат</h3>
-            <p>
-              Последовательные тренировки, контроль
-              прогресса и понятная система занятий.
-            </p>
+          <div class="quote">
+            Сильнее сегодня,<br>
+            чем вчера.
           </div>
 
         </div>
 
+        <div class="trainer-box">
+
+          <div class="label">
+            Steel Form
+          </div>
+
+          <h3>
+            Команда тренеров
+          </h3>
+
+          <p>
+            Давид и Михаил помогут построить
+            системный подход к тренировкам.
+          </p>
+
+        </div>
+
       </div>
-    </section>
 
-    <!-- ABOUT -->
+    </div>
 
-    <section id="about">
-      <div class="container">
+  </section>
 
-        <div class="about-grid">
 
-          <div class="about-text">
+  <!-- TEAM -->
 
-            <div class="badge">Steel Form</div>
+  <section class="team-section" id="team">
 
-            <h2 class="section-title">
-              ТВОЯ ФОРМА —<br>
-              <span>ТВОЯ РАБОТА.</span>
-            </h2>
+    <div class="container">
 
-            <p>
-              Steel Form создан для тех, кто хочет
-              системно заниматься спортом и видеть результат.
-            </p>
+      <div class="badge">
+        Наша команда
+      </div>
 
-            <p>
-              Мы не обещаем быстрых чудес. Вместо этого —
-              тренировки, дисциплина и постепенный прогресс.
-            </p>
+      <h2 class="section-title">
+        ПРОФЕССИОНАЛЬНЫЕ
+        <span>ТРЕНЕРЫ.</span>
+      </h2>
 
-            <div class="quote">
-              Сильнее сегодня,<br>
-              чем вчера.
-            </div>
+      <p class="section-subtitle">
+        Давид и Михаил — тренеры Steel Form.
+        Одна команда, одна цель — твой результат.
+      </p>
+
+
+      <!-- ФОТО ТРЕНЕРОВ -->
+
+      <div class="team-image">
+
+        <img
+          src="/team.png"
+          alt="Тренеры Steel Form — Давид и Михаил"
+        >
+
+      </div>
+
+
+      <!-- ИМЕНА -->
+
+      <div class="trainers">
+
+        <div class="trainer-box">
+
+          <div class="label">
+            Тренер
+          </div>
+
+          <h3>
+            Давид
+          </h3>
+
+          <p>
+            Персональный тренер Steel Form
+          </p>
+
+        </div>
+
+
+        <div class="trainer-box">
+
+          <div class="label">
+            Тренер
+          </div>
+
+          <h3>
+            Михаил
+          </h3>
+
+          <p>
+            Персональный тренер Steel Form
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROGRAMS -->
+
+  <section class="programs" id="programs">
+
+    <div class="container">
+
+      <div class="badge">
+        Тренировки
+      </div>
+
+      <h2 class="section-title">
+        ВЫБЕРИ СВОЮ
+        <span>ПРОГРАММУ.</span>
+      </h2>
+
+      <p class="section-subtitle">
+        Подберём формат занятий в зависимости
+        от твоих целей и уровня подготовки.
+      </p>
+
+
+      <div class="program-grid">
+
+
+        <div class="program">
+
+          <h3>
+            Персональная
+          </h3>
+
+          <p>
+            Индивидуальная тренировка
+            с тренером.
+          </p>
+
+          <div class="program-price">
+            Индивидуально
+          </div>
+
+        </div>
+
+
+        <div class="program">
+
+          <h3>
+            Силовая
+          </h3>
+
+          <p>
+            Работа над силой,
+            техникой и прогрессом.
+          </p>
+
+          <div class="program-price">
+            Индивидуально
+          </div>
+
+        </div>
+
+
+        <div class="program">
+
+          <h3>
+            Форма
+          </h3>
+
+          <p>
+            Системные тренировки
+            для улучшения физической формы.
+          </p>
+
+          <div class="program-price">
+            Индивидуально
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <div class="container">
+
+      <div class="contact-grid">
+
+
+        <div class="contact-info">
+
+          <div class="badge">
+            Запись
+          </div>
+
+          <h2 class="section-title">
+            ГОТОВ
+            <span>НАЧАТЬ?</span>
+          </h2>
+
+          <p>
+            Оставь заявку. Мы свяжемся с тобой
+            и обсудим подходящий формат тренировок.
+          </p>
+
+
+          <div class="contact-item">
+
+            <small>
+              Тренеры
+            </small>
+
+            <strong>
+              Давид и Михаил
+            </strong>
 
           </div>
 
-          <div class="trainer-card" id="trainer">
 
-            <div class="trainer-label">Твой тренер</div>
+          <div class="contact-item">
 
-            <div class="trainer-name">Михаил</div>
+            <small>
+              Направление
+            </small>
 
-            <div class="trainer-role">
-              Персональный тренер
-            </div>
+            <strong>
+              Персональные тренировки
+            </strong>
 
-            <ul
+          </div>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <form class="form" id="leadForm">
+
+          <h3>
+            Оставить заявку
+          </h3>
+
+
+          <div class="field">
+
+            <label for="name">
+              Имя
+            </label>
+
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Введите имя"
+              required
+            >
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="phone">
+              Телефон
+            </label>
+
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              placeholder="+7 900 000-00-00"
+              required
+            >
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="trainer">
+              Тренер
+            </label>
+
+            <select
+              id="trainer"
+              name="trainer"
+            >
+
+              <option value="Давид">
+                Давид
+              </option>
+
+              <option value="Михаил">
+                Михаил
+              </option>
+
+              <option value="Без разницы">
+                Без разницы
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="plan">
+              Формат
+            </label>
+
+            <select
+              id="plan"
+              name="plan"
+            >
+
+              <option value="Персональная тренировка">
+                Персональная тренировка
+              </option>
+
+              <option value="Силовая тренировка">
+                Силовая тренировка
+              </option>
+
+              <option value="Работа над формой">
+                Работа над формой
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <button
+            type="submit"
+            class="btn btn-yellow"
+          >
+            Отправить заявку
+          </button>
+
+
+          <div
+            class="form-message"
+            id="formMessage"
+          ></div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container footer-inner">
+
+    <div>
+      © 2026 Steel Form
+    </div>
+
+    <div>
+      Давид • Михаил
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+  const form = document.getElementById("leadForm");
+  const message = document.getElementById("formMessage");
+
+  form.addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+    const data = {
+      name: document.getElementById("name").value,
+      phone: document.getElementById("phone").value,
+      trainer: document.getElementById("trainer").value,
+      plan: document.getElementById("plan").value
+    };
+
+    const button = form.querySelector("button");
+
+    button.disabled = true;
+    button.textContent = "Отправляем...";
+
+    try {
+
+      const response = await fetch("/api/lead", {
+
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify(data)
+
+      });
+
+      const result = await response.json();
+
+      if (result.ok) {
+
+        message.style.display = "block";
+        message.textContent =
+          "Заявка отправлена. Мы свяжемся с вами.";
+
+        form.reset();
+
+      } else {
+
+        message.style.display = "block";
+        message.textContent =
+          result.error || "Не удалось отправить заявку.";
+
+      }
+
+    } catch (error) {
+
+      message.style.display = "block";
+      message.textContent =
+        "Ошибка соединения с сервером.";
+
+    }
+
+    button.disabled = false;
+    button.textContent = "Отправить заявку";
+
+  });
+
+</script>
+
+</body>
+</html>
