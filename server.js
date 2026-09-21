@@ -17,7 +17,9 @@ const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
-
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 app.post("/api/lead", async (req, res) => {
   try {
     if (!TOKEN || !CHAT_ID) {
